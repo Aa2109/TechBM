@@ -1,0 +1,1 @@
+A professionally designed IT Services website developed using React, Vite, TypeScript, and shadcn/ui. The project delivers a fast, responsive, and modern user interface to showcase technology services, solutions, and business offerings. Built with clean architecture, reusable components, and optimized performance for production-ready deployment.
