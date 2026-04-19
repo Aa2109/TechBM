@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Heart, Award } from "lucide-react";
 import teamImage from "@/assets/about-team.jpg";
+import { motion } from "framer-motion";
+import TeamMember from "@/components/TeamMember";
 
 const About = () => {
   const values = [
@@ -29,14 +31,42 @@ const About = () => {
   ];
 
   const team = [
-     { name: "Bazami Mateen", role: "Founder & Director", years: "5+ years experience" },
-
-    { name: "Shabbir Ahmad", role: "CEO & CTO ", years: "10+ years experience" },
-     { name: "Abhishek Raj", role: "Director", years: "5+ years experience" },
-
-    // { name: "S", role: "CTO", years: "15+ years experience" },
-  
-    { name: "Md khursid Alam", role: "Project Manager", years: "10+ years experience" },
+    {
+      name: "Bazami Mateen",
+      role: "Founder & Director",
+      years: "5+ years experience",
+      description: "Bazami Mateen is the visionary founder and director of TechBM, bringing entrepreneurial spirit and strategic leadership to the organization. With 5+ years of experience in the IT industry, Bazami has successfully established TechBM as a trusted technology partner for businesses of all sizes. His expertise spans across business development, project strategy, and client relations. Known for his innovative approach and commitment to excellence, Bazami leads the company's mission to deliver transformative digital solutions.",
+      specialties: ["Business Strategy", "Project Leadership", "Client Relations", "Digital Innovation"],
+      linkedinUrl: "https://www.linkedin.com/in/bazami-mateen",
+      email: "bazami@techbm.com",
+    },
+    {
+      name: "Shabbir Ahmad",
+      role: "CEO & Chief Technology Officer",
+      years: "10+ years experience",
+      description: "Shabbir Ahmad serves as CEO and Chief Technology Officer, overseeing all technical operations and strategic direction of TechBM. With over 10 years of experience in software development and technology architecture, Shabbir brings deep expertise in enterprise solutions, cloud infrastructure, and software engineering best practices. His technical vision and leadership have been instrumental in building a robust technology stack and assembling a world-class development team. Shabbir is passionate about leveraging cutting-edge technologies to solve complex business challenges.",
+      specialties: ["Enterprise Architecture", "Cloud Solutions", "Software Development", "Technical Strategy"],
+      linkedinUrl: "https://www.linkedin.com/in/shabbir-ahmad-techbm",
+      email: "shabbir@techbm.com",
+    },
+    {
+      name: "Abhishek Raj",
+      role: "Director",
+      years: "5+ years experience",
+      description: "Abhishek Raj serves as Director at TechBM, playing a crucial role in driving operational excellence and project delivery. With 5+ years of experience in IT management and software solutions, Abhishek oversees key departmental functions and ensures seamless execution of client projects. His background includes expertise in full-stack development, agile methodologies, and team leadership. Abhishek is dedicated to maintaining TechBM's high standards of quality and innovation while fostering a collaborative work environment.",
+      specialties: ["Project Management", "Full-Stack Development", "Agile Methodologies", "Team Leadership"],
+      linkedinUrl: "https://www.linkedin.com/in/abhishek-raj-techbm",
+      email: "abhishek@techbm.com",
+    },
+    {
+      name: "Md Khursid Alam",
+      role: "Project Manager",
+      years: "10+ years experience",
+      description: "Md Khursid Alam is an experienced Project Manager with 10+ years of expertise in delivering complex IT projects on time and within budget. As a key member of the TechBM leadership team, Khursid ensures that every project meets the highest quality standards while maintaining excellent client communication and satisfaction. His background includes proficiency in PMBOK, Agile, and Scrum methodologies, combined with deep knowledge of resource management and risk mitigation. Khursid's dedication to project excellence has been pivotal in TechBM's consistent track record of successful deliveries.",
+      specialties: ["Project Planning", "Risk Management", "Resource Optimization", "Quality Assurance"],
+      linkedinUrl: "https://www.linkedin.com/in/md-khursid-alam",
+      email: "khursid@techbm.com",
+    },
   ];
 
   return (
@@ -143,19 +173,22 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Leadership Team</h2>
-            <p className="text-lg text-muted-foreground">Meet the experts driving our success</p>
+            <p className="text-lg text-muted-foreground">Meet the visionary leaders driving TechBM's success</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-4" />
-                  <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary mb-2">{member.role}</p>
-                  <p className="text-xs text-muted-foreground">{member.years}</p>
-                </CardContent>
-              </Card>
+              <TeamMember
+                key={index}
+                index={index}
+                name={member.name}
+                role={member.role}
+                years={member.years}
+                description={member.description}
+                specialties={member.specialties}
+                linkedinUrl={member.linkedinUrl}
+                email={member.email}
+              />
             ))}
           </div>
         </div>

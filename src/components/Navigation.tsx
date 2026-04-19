@@ -60,7 +60,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <div className="md:hidden py-4 space-y-4 animate-slide-in-from-top">
             {links.map((link) => (
               <Link
                 key={link.to}

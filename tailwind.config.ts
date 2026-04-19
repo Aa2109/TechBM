@@ -80,12 +80,117 @@ export default {
             height: "0",
           },
         },
+        "slide-in-from-top": {
+          from: {
+            transform: "translateY(-100%)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        "slide-out-to-top": {
+          from: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+          to: {
+            transform: "translateY(-100%)",
+            opacity: "0",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
+        "glow": {
+          "0%, 100%": {
+            "box-shadow": "0 0 20px hsl(210 100% 56%), 0 0 40px hsl(210 100% 56% / 0.5)",
+          },
+          "50%": {
+            "box-shadow": "0 0 30px hsl(199 89% 48%), 0 0 60px hsl(199 89% 48% / 0.5)",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.8",
+          },
+        },
+        "bounce-slow": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "shimmer": {
+          "0%": {
+            backgroundPosition: "-1000px 0",
+          },
+          "100%": {
+            backgroundPosition: "1000px 0",
+          },
+        },
+        "gradient-shift": {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+        "rotate-slow": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in-from-top": "slide-in-from-top 0.3s ease-out",
+        "slide-out-to-top": "slide-out-to-top 0.3s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "glow": "glow 3s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+        "shimmer": "shimmer 2s infinite",
+        "gradient-shift": "gradient-shift 5s ease infinite",
+        "rotate-slow": "rotate-slow 20s linear infinite",
+      },
+      animationDelay: {
+        300: "300ms",
+        500: "500ms",
+        700: "700ms",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addUtilities }: any) {
+      addUtilities({
+        ".animate-delay-300": {
+          "animation-delay": "300ms",
+        },
+        ".animate-delay-500": {
+          "animation-delay": "500ms",
+        },
+        ".animate-delay-700": {
+          "animation-delay": "700ms",
+        },
+      });
+    },
+  ],
 } satisfies Config;
