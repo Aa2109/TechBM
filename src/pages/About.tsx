@@ -37,7 +37,7 @@ const About = () => {
       years: "5+ years experience",
       description: "Bazami Mateen is the visionary founder and director of TechBM, bringing entrepreneurial spirit and strategic leadership to the organization. With 5+ years of experience in the IT industry, Bazami has successfully established TechBM as a trusted technology partner for businesses of all sizes. His expertise spans across business development, project strategy, and client relations. Known for his innovative approach and commitment to excellence, Bazami leads the company's mission to deliver transformative digital solutions.",
       specialties: ["Business Strategy", "Project Leadership", "Client Relations", "Digital Innovation"],
-      linkedinUrl: "https://www.linkedin.com/in/bazami-mateen",
+      linkedinUrl: "https://www.linkedin.com/in/bazami-mateen-78ba21214/",
       email: "bazami@techbm.com",
     },
     {
